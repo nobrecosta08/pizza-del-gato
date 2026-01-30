@@ -1,0 +1,288 @@
+﻿<html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - Pizzaria Del Gatito</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+  <header class="topo">
+    <div class="logo">Pizzaria Del Gatito</div>
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="cardapio.html" class="active">Cardápio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="pedido.html">Pedido</a>
+    </nav>
+    <div class="icones">
+      <input type="text" placeholder="Buscar..." class="buscar" id="busca-cardapio">
+      <a href="pedido.html" class="carrinho-icon">
+        <i class="fas fa-shopping-cart"></i> 
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+    <h1 style="font-size: 2.2rem; color: var(--gold); text-align: center; margin-bottom: 20px;">Nosso Cardapio</h1>
+
+    <div class="category-tabs" id="filtros-cardapio">
+        <button class="tab active" data-categoria="todas">Todas as Op��es</button>
+        <button class="tab" data-categoria="salgadas">Pizzas Salgadas</button>
+        <button class="tab" data-categoria="doces">Pizzas Doces</button>
+        <button class="tab" data-categoria="lanches">Lanches</button>
+        <button class="tab" data-categoria="bebidas">Bebidas</button>
+    </div>
+
+    <section class="grid-produtos" id="cardapio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px;">
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pizza-calabresa.png" alt="Calabresa Especial">
+          <h3>Calabresa Especial</h3>
+          <p></p>
+          <div class="price">R$ 54.90</div>
+          <button class="btn" onclick="addCarrinho(1)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pizza-frango.png" alt="Frango com Catupiry">
+          <h3>Frango com Catupiry</h3>
+          <p></p>
+          <div class="price">R$ 58.90</div>
+          <button class="btn" onclick="addCarrinho(2)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pzz 4 queijos.png" alt="Quatro Queijos">
+          <h3>Quatro Queijos</h3>
+          <p></p>
+          <div class="price">R$ 56.00</div>
+          <button class="btn" onclick="addCarrinho(3)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pizza-portuguesa.png" alt="Portuguesa Premium">
+          <h3>Portuguesa Premium</h3>
+          <p></p>
+          <div class="price">R$ 60.50</div>
+          <button class="btn" onclick="addCarrinho(4)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pizza oliveira azeitona negra.jpeg" alt="Pizza Oliveira">
+          <h3>Pizza Oliveira</h3>
+          <p></p>
+          <div class="price">R$ 62.00</div>
+          <button class="btn" onclick="addCarrinho(5)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pzz-margherita2.jpeg" alt="Margherita Especial">
+          <h3>Margherita Especial</h3>
+          <p></p>
+          <div class="price">R$ 58.50</div>
+          <button class="btn" onclick="addCarrinho(6)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pzz-margherita-tradicional.jpeg" alt="Margherita Tradicional">
+          <h3>Margherita Tradicional</h3>
+          <p></p>
+          <div class="price">R$ 52.00</div>
+          <button class="btn" onclick="addCarrinho(7)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pizza-nutella.png" alt="Nutella">
+          <h3>Nutella</h3>
+          <p></p>
+          <div class="price">R$ 62.00</div>
+          <button class="btn" onclick="addCarrinho(8)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pzz-doce-morango-duplo-chocolate.jpeg" alt="Morango e Duplo Chocolate">
+          <h3>Morango e Duplo Chocolate</h3>
+          <p></p>
+          <div class="price">R$ 64.00</div>
+          <button class="btn" onclick="addCarrinho(9)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pzz-doce-m&amp;m.jpeg" alt="M&amp;M's Chocolate">
+          <h3>M&amp;M's Chocolate</h3>
+          <p></p>
+          <div class="price">R$ 61.00</div>
+          <button class="btn" onclick="addCarrinho(10)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pzz-doce-banana-eoutros.jpeg" alt="Banana e Canela">
+          <h3>Banana e Canela</h3>
+          <p></p>
+          <div class="price">R$ 55.00</div>
+          <button class="btn" onclick="addCarrinho(11)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pizza romeu e julieta sem fundo.png" alt="Romeu e Julieta">
+          <h3>Romeu e Julieta</h3>
+          <p></p>
+          <div class="price">R$ 55.00</div>
+          <button class="btn" onclick="addCarrinho(12)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/coca cola 2L.jpeg" alt="Coca-Cola 2 Litros">
+          <h3>Coca-Cola 2 Litros</h3>
+          <p></p>
+          <div class="price">R$ 12.00</div>
+          <button class="btn" onclick="addCarrinho(13)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/refri guarana antartica 2L.jpeg" alt="Guaraná 2 Litros">
+          <h3>Guaraná 2 Litros</h3>
+          <p></p>
+          <div class="price">R$ 11.00</div>
+          <button class="btn" onclick="addCarrinho(14)">Pedir Agora</button>
+        </div>
+        
+        <div class="card-produto" style="">
+          <img src="./img/produtos/agua H2O 500ml.jpeg" alt="água Mineral (500ml)">
+          <h3>água Mineral (500ml)</h3>
+          <p></p>
+          <div class="price">R$ 4.50</div>
+          <button class="btn" onclick="addCarrinho(16)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/hamber1.png" alt="X-Burger Del Gatito">
+          <h3>X-Burger Del Gatito</h3>
+          <p></p>
+          <div class="price">R$ 25.00</div>
+          <button class="btn" onclick="addCarrinho(17)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/hamber3.png" alt="X-Salada Duplo">
+          <h3>X-Salada Duplo</h3>
+          <p></p>
+          <div class="price">R$ 35.00</div>
+          <button class="btn" onclick="addCarrinho(18)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/pzz-x-tudo.jpeg" alt="X-Tudo Mega">
+          <h3>X-Tudo Mega</h3>
+          <p></p>
+          <div class="price">R$ 40.00</div>
+          <button class="btn" onclick="addCarrinho(19)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/hamber4.png" alt="Cheese Bacon">
+          <h3>Cheese Bacon</h3>
+          <p></p>
+          <div class="price">R$ 30.00</div>
+          <button class="btn" onclick="addCarrinho(20)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/hamber5.png" alt="Frango Grelhado">
+          <h3>Frango Grelhado</h3>
+          <p></p>
+          <div class="price">R$ 28.00</div>
+          <button class="btn" onclick="addCarrinho(21)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/açaí tigela 300ml.jpeg" alt="Açaí na Tigela (300ml)">
+          <h3>Açaí na Tigela (300ml)</h3>
+          <p></p>
+          <div class="price">R$ 18.00</div>
+          <button class="btn" onclick="addCarrinho(22)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/açaí no copo 700ml.jpeg" alt="Açaí 700ml (Completo)">
+          <h3>Açaí 700ml (Completo)</h3>
+          <p></p>
+          <div class="price">R$ 28.00</div>
+          <button class="btn" onclick="addCarrinho(23)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/mix de frutas.jpeg" alt="Mix de Frutas">
+          <h3>Mix de Frutas</h3>
+          <p></p>
+          <div class="price">R$ 22.00</div>
+          <button class="btn" onclick="addCarrinho(24)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/barca duo.jpeg" alt="Barca de Açaí">
+          <h3>Barca de Açaí</h3>
+          <p></p>
+          <div class="price">R$ 45.00</div>
+          <button class="btn" onclick="addCarrinho(25)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/açaí tropical no copo 700ml.jpeg" alt="Açaí Tropical">
+          <h3>Açaí Tropical</h3>
+          <p></p>
+          <div class="price">R$ 23.00</div>
+          <button class="btn" onclick="addCarrinho(26)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/açaí com leite de morango e frutas no copo 500ml.jpeg" alt="Açaí com Leite de Morango">
+          <h3>Açaí com Leite de Morango</h3>
+          <p></p>
+          <div class="price">R$ 25.00</div>
+          <button class="btn" onclick="addCarrinho(27)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/açaí doce de leite e chocolate no copo 700ml.jpeg" alt="Açaí Doce de Leite e Chocolate">
+          <h3>Açaí Doce de Leite e Chocolate</h3>
+          <p></p>
+          <div class="price">R$ 26.50</div>
+          <button class="btn" onclick="addCarrinho(28)">Pedir Agora</button>
+        </div>
+        <div class="card-produto" style="">
+          <img src="./img/produtos/açaí musse de limão leite em pó e uvas no copo 700ml.jpeg" alt="Açaí Mousse de Limão">
+          <h3>Açaí Mousse de Limão</h3>
+          <p></p>
+          <div class="price">R$ 24.00</div>
+          <button class="btn" onclick="addCarrinho(29)">Pedir Agora</button>
+        </div>
+
+        <div class="card-produto">
+                    <img src="img/produtos/shake de açaí.jpeg" alt="Produto 1">
+                    <h3>Shake de Açaí </h3>
+                    <p class="price">R$ 15,90</p>
+                    <button class="btn">Pedir Agora</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/produtos/smoothie tropical.jpeg" alt="Produto 3">
+                    <h3>Smoothie Tropical</h3>
+                    <p class="price">R$ 12,00</p>
+                    <button class="btn">Pedir Agora</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/produtos/tigela super.jpeg" alt="Produto 2">
+                    <h3>Tigela Power</h3>
+                    <p class="price">R$ 22,50</p>
+                    <button class="btn">Pedir Agora</button>
+                </div>
+                </section>
+  </main>
+  
+  <footer>
+    <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+        <div class="footer-col">
+            <p style="color: var(--gold); font-weight: bold; margin-bottom: 5px;">Contato</p>
+            <p>(11) 98765-4321</p>
+            <p>contato@delgatito.com.br</p>
+        </div>
+        <div class="footer-col">
+            <p style="color: var(--gold); font-weight: bold; margin-bottom: 5px;">Hor?rio</p>
+            <p>Ter - Dom: 18h ?s 00h</p>
+            <p>Segundas: Fechado</p>
+        </div>
+        <div class="footer-col social-icons">
+            <p style="color: var(--gold); font-weight: bold; margin-bottom: 5px;">Siga-nos</p>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <div class="copyright" style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #333; font-size: 0.85rem;">
+        ? 2025 Pizzaria Del Gatito ? Sabor que faz ronronar.
+    </div>
+  </footer>
+
+  <script src="js/produtos.js"></script> 
+  <script src="js/carrinho.js"></script> 
+  <script src="js/cardapio.js"></script> 
+
+</body></html>
