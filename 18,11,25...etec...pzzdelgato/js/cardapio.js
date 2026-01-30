@@ -1,18 +1,18 @@
-// Busca e filtros do cardápio, sem conflitar com HTML atual.
-// Usa #busca-cardapio e botões de .category-tabs[data-categoria].
-
+// Busca e filtros do cardÃµpio, sem conflitar com HTML atual.
+// Usa #busca-cardapio e botÃµes de .category-tabs[data-categoria].
+  
 (function () {
   const grid = document.getElementById("cardapio-grid");
   const buscaInput = document.getElementById("busca-cardapio");
   const tabsContainer = document.getElementById("filtros-cardapio");
 
-  // Corrigir texto com acentuação quebrada na UI (apenas se presente)
+  // Corrigir texto com acentuaÃ§Ã£o quebrada na UI (apenas se presente)
   if (tabsContainer) {
     const btnTodas = tabsContainer.querySelector('[data-categoria="todas"]');
-    if (btnTodas) btnTodas.textContent = "Todas as Opções";
+    if (btnTodas) btnTodas.textContent = "Todas as Opï¿½ï¿½es";
   }
 
-  // Se grid não é dinâmico (já renderizado em HTML), aplicamos filtros por texto (h3)
+  // Se grid nï¿½o ï¿½ dinï¿½mico (jï¿½ renderizado em HTML), aplicamos filtros por texto (h3)
   function filtrarLista({ texto = "", categoria = "todas" } = {}) {
     if (!grid) return;
     const cards = Array.from(grid.querySelectorAll(".card-produto"));
@@ -22,13 +22,13 @@
       const visivelTexto = nome.includes(texto.toLowerCase());
       let visivelCategoria = true;
 
-      // Deduções de categoria por nome (fallback para HTML estático)
+      // Deduï¿½ï¿½es de categoria por nome (fallback para HTML estï¿½tico)
       const mapNomeCategoria = {
-        salgadas: ["calabresa","x-burger", "frango", "quatro queijos", "portuguesa", "margherita", "oliveira"],
-        doces: ["nutella", "morango", "m&m", "banana", "romeu", "julieta"],
-        lanches: ["x-salada", "x-tudo", "cheese", "frango grelhado"],
-        bebidas: ["coca", "guaraná","água", ],
-        acai: ["açaí", "acai"]
+        salgadas: ["calabresa","x-tudo","x-burger", "frango", "quatro queijos", "portuguesa", "margherita", "oliveira"],
+        doces: ["nutella", "morango", "m&m", "banana", "romeu julieta"],
+        lanches: ["x-salada","cheese", "frango grelhado"],
+        bebidas: ["coca", "guaranÃ¡","Ã¡gua", ],
+        acai: ["aÃ§aÃ­", "barca","mix",],
       };
 
       if (categoria !== "todas") {
